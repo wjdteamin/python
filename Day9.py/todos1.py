@@ -25,6 +25,7 @@ def add_todo():
     title = input('할일 입력 : ')
     todos.append({"tno" : tno, "title" : title, "finish" : False})
     tno = tno +1    
+# 계속 누적이 된다.
 
 def toggle_finish():
     pass
