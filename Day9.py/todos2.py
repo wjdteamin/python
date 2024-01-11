@@ -40,6 +40,8 @@ def update_todos():
 
 def del_todos():
     i = 0
+    # 데이터를 가지고 찾는 것이다.
+    """
     del_detail = input("삭제할 내용 : ")
     for item in todos:
           if del_detail == item["title"]:
@@ -48,6 +50,18 @@ def del_todos():
                print("삭제되었습니다.")
     if i == 0 :
         print("없습니다.")  
+    """
+    # 인덱스를 가지고 찾는 것 
+    del_detail_number = int(input("삭제할 번호: "))
+    for item in todos:
+          if del_detail_number == item["tno"]:
+               todos.remove(item)
+               print("삭제되었습니다.")
+               i = -1
+          i+=1
+    if i != -1 :
+        print("없습니다.")  
+
 
 
 
