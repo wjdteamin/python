@@ -51,16 +51,18 @@ def del_todos():
     if i == 0 :
         print("없습니다.")  
     """
-    # 인덱스를 가지고 찾는 것 
+    # 인덱스를 가지고 찾는 것(있는지 없는지 검사할 때, 문제 생긴다.)
+    """
     del_detail_number = int(input("삭제할 번호: "))
     for item in todos:
           if del_detail_number == item["tno"]:
                todos.remove(item)
                print("삭제되었습니다.")
-               i = -1
+               i = 0
           i+=1
-    if i != -1 :
+    if i ==0 :
         print("없습니다.")  
+    """
 
 
 

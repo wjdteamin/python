@@ -1,7 +1,7 @@
 import e005
 #from e005 import hello   e005를 쓰기 싫으면 from을 적으면 된다. ->hello()
 # from e005 import hello, py 여러개의 함수를 사용하고 싶으면 ,를 사용하면 된다.
-
+# as를 붙이면 이름을 수정할 수 있다.
 
 e005.hello()
 
