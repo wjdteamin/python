@@ -42,7 +42,7 @@ def do_write():
 def delete():
     tno = request.form.get('tno',type=int)
     for todo in todos:
-        if todo.tno==tno:
+        if todo['tno']==tno:
             todos.remove(todo)
             break
     return redirect("/list")
