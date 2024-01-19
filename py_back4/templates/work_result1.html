@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!--파이썬 템플릿 문법-> {&&}  안에 있는 코드는 파이썬 코드라는 의미다.-->
+    {% if is_adult == true %}
+    <p class="blue">{{ irum }}님은 성년입니다.</p>
+    {% else %}
+    <p class="red">{{ irum }}님은 미성년입니다.</p>
+    {% endif %}
+  </body>
+</html>
+<!-- 여기 endif 사용해도 된다.
+    elif is_adult== false라해도 된다. -->
+<!-- 끝났다는 의미다. 문 닫아야한다. 
+    
+    html의 주석과 파이썬 주석은 서로 다르다. 내가 위의 코드처럼 파이썬을 사용하기 위한 코드는 파이썬에서 
+    보고 실행하는 것이다. 근데 내가 html주석을 사용해서 파이썬 코드를 안쓴다고 하면 파이썬은 그냥 인식을 해버린다.
+    그래서 오류가 난것이다. 
+
+    즉, 파이썬이 아는 코드와 html이 아는 코드는 다르기 때문에 이런 문제가 생긴 것이다. 
+-->
