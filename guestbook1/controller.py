@@ -20,11 +20,6 @@ def list():
     return render_template("list.html", guestbook=guestbook)
 
 
-# @app.route("/delete", methods=['post'])
-# def delete():
-#     tno = request.form.get("tno",type=int)
-#     m.delete(tno)
-
 @app.route("/write", methods=['post'])
 def write():
     content = request.form.get('content', type=str)
@@ -32,7 +27,17 @@ def write():
     return redirect('/list')
 
 
+@app.route("/delete", methods=['post'])
+def delete():
+    gno = request.form.get("gno", type=int)
+    m.delete(gno)
+    return redirect("/list")
+
+
 # 서버를 개발자 모드(변경하면 자동 재실행)로 실행
 app.run(debug=True)
 
 # 컨트롤로는 주소 공급, 모델과 뷰를 연결해주는 역할을 해준다. list.html- > 뷰, m.guestbook -> 모델
+
+
+# get -> 눌러서 넘어가는 것이라 생각해라.

@@ -34,10 +34,27 @@
           <td>{{gb.content}}</td>
           <td>{{gb.writeday}}</td>
           <td>
-            <form action="delete" method="post">
-              <input type="hidden" name="tno" />
+            <!--html에서 서버에 요청하는 방법 : form -->
+            <!-- <form action="/delete" method="get">
+              <input type="" name="tno" value="{{gb.gno}}" />
+              <button class="btn btn-danger">삭제</button>
+            </form> -->
+
+            <!-- <a class="btn btn-danger" href="/delete?gno={{gb.gno}}">삭제</a> -->
+            <form action="/delete" method="post">
+              <input type="hidden" name="gno" value="{{gb.gno}}" />
               <button class="btn btn-danger">삭제</button>
             </form>
+
+            <!-- get방식이기 때문에 가능하다? 
+                /delete 서버
+                get방식은 값을 넘길때, ?를 가지고 만든다. 
+                그래서 /delete?gno={{gb.gno}}을 사용할 수 있다.
+                즉, 어떻게 넘기든 상관없다. 그냥 넘기기만 하면 된다. 그래서 방식이 여러개다. 
+
+                get방식에서는 가능하지만, post는 무조건 post가 필요하다. get일때는 서버로 보내기만 하면 된다. 그래서 form 굳이 필요없다.
+                근데 삭제는 get으로 하면 안된다.
+            -->
           </td>
         </tr>
         {%endfor%}

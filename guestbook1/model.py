@@ -18,11 +18,14 @@ guestbook.append(gb2)
 def findall():
     return guestbook
 
-# def delete(tno):
-#     for numbers in guestbook:
-#         if tno == numbers['tno']:
-#             guestbook.remove(numbers)
-#     return guestbook
+
+def delete(gno):
+    # 값을 리스트에서 한번에 찾는 법은 없다고 생각해라. 그러니까 for문과 if를 사용하지 않고는 찾을 수 없다는 의미다.
+    # 값을 하나씩 꺼내서 비교한다.
+    for gb in guestbook:
+        if gno == gb['gno']:
+            guestbook.remove(gb)
+            break
 
 
 def content_append(content: str):
