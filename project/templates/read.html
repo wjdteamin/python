@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      header,
+      nav,
+      footer {
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid skyblue;
+      }
+      nav {
+        border: 1px solid skyblue;
+      }
+      nav form {
+        display: inline-block;
+      }
+      textarea {
+        width: 100%;
+        height: 6.25em;
+        border: none;
+        resize: none;
+      }
+      aside {
+        height: 200px;
+        width: 100px;
+        background-color: deeppink;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+      }
+      section {
+        float: left;
+        width: 1133px;
+        background-color: skyblue;
+        min-height: 600px;
+      }
+
+      
+      #all {
+        width: 1333px;
+        margin: 0 auto;
+      }
+      main {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="all">
+      <header>ICIA Mini Board</header>
+      <nav>
+        <form action="/">
+          <button class="btn btn-primary">HOME</button>
+        </form>
+        <form action="/write" method="get">
+          <button class="btn btn-primary">글작성</button>
+        </form>
+      </nav>
+      <main>
+        <aside class="left"></aside>
+        <section>
+          <div class="container mt-3">
+            <form action="/update" method="post">
+              <div class="mb-3 mt-3">
+                <input type="hidden" name="bno" value="{{findone.bno}}" />
+                <label for="writer" class="form-label">닉네임 :</label>
+                <input type="text" class="form-control" value="{{findone.writer}}" name="writer" disabled />
+              </div>
+              <div class="mb-3">
+                <label for="title" class="form-label">제목 :</label>
+                <input type="text" class="form-control" value="{{findone.title}}" name="title" />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="content">{{findone.content}}</textarea>
+              </div>
+              <button class="btn btn-success" style="width: 90px; margin-bottom: 15px">변경하기</button>
+            </form>
+            <form action="/delete" method="post">
+              <input type="hidden" name="bno" value="{{findone.bno}}" />
+              <button class="btn btn-danger" style="width: 90px" ;>삭제</button>
+            </form>
+          </div>
+        </section>
+        <aside class="right"></aside>
+      </main>
+      <footer>Copyright by ICIA. All rights reserved. Since 2012</footer>
+    </div>
+  </body>
+</html>
